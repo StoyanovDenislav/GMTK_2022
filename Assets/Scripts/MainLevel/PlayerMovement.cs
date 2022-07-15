@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 wayPoint;
     private float ConstZ = -10;
     public float Offset;
+    public GameObject waypoint;
 
 
     private void Start()
@@ -29,7 +30,14 @@ public class PlayerMovement : MonoBehaviour
         }
         
         transform.position = Vector2.MoveTowards(transform.position, wayPoint, 10 * Time.deltaTime);
-
+            
+        if (!waypoint.activeSelf && transform.position.x != wayPoint.x || transform.position.y != wayPoint.y)
+        {
+            waypoint.SetActive(true);
+            waypoint.transform.position = wayPoint;
+        }
+        else waypoint.SetActive(false);
+        
         camera.transform.position = Vector3.Lerp(new Vector3(camera.transform.position.x, camera.transform.position.y, ConstZ), 
             new Vector3(transform.position.x + Offset, transform.position.y, ConstZ), 5 * Time.deltaTime);
 
