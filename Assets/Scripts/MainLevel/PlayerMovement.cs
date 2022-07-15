@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-   
     public Camera camera;
     public Vector2 wayPoint;
     private float ConstZ = -10;
@@ -15,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        
         camera = FindObjectOfType<Camera>();
         
     }
