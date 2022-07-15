@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private float ConstZ = -10;
     public float Offset;
     public GameObject waypoint;
-
+    public ParticleSystem PlayerEffect;
 
     private void Start()
     {
@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             wayPoint = camera.ScreenToWorldPoint(Input.mousePosition);
-
+            CreatePlayerEffect();
         }
         
         transform.position = Vector2.MoveTowards(transform.position, wayPoint, 10 * Time.deltaTime);
@@ -40,5 +40,10 @@ public class PlayerMovement : MonoBehaviour
             new Vector3(transform.position.x + Offset, transform.position.y, ConstZ), 5 * Time.deltaTime);
 
 
+    }
+
+    void CreatePlayerEffect()
+    {
+        PlayerEffect.Play();
     }
 }
