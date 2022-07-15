@@ -12,7 +12,15 @@ public class Dice : MonoBehaviour
     private bool clicked = false;
     private float degr = 1;
     public float diceNum;
- 
+    
+    //---------------
+
+    private HighRollDice HighRollDice;
+    private void Start()
+    {
+        HighRollDice = FindObjectOfType<HighRollDice>();
+
+    }
 
     private void Update()
     {
@@ -30,9 +38,13 @@ public class Dice : MonoBehaviour
 
     public void Roll()
     {
-        diceNum = Random.Range(1, 6);
-        btn.transform.GetComponent<Image>().sprite = diceImages[(int)diceNum - 1];
-        clicked = true;
+       
+            diceNum = Random.Range(1, 6);
+            btn.transform.GetComponent<Image>().sprite = diceImages[(int) diceNum - 1];
+            clicked = true;
+        
+        
+       
 
     }
 }

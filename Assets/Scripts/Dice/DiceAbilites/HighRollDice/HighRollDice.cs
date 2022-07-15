@@ -1,23 +1,30 @@
 
 using System;
+using System.Diagnostics;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
 
-public class DiceAbilities : MonoBehaviour
+public class HighRollDice : MonoBehaviour
 {
-   
-
+    
     private Dice Dice;
+    public DiceScriptableObject DiceScriptableObject;
+    public bool HighRollEnabled;
+    
 
     public void Start()
     {
         Dice = FindObjectOfType<Dice>();
-
+        
+        
     }
+
+    
 
     public void HighRoll()
     {
-       
+        HighRollEnabled = true;                                                                
         var randomNumber = Random.Range(1, 100);
         
         if (randomNumber <= 20)
@@ -36,6 +43,7 @@ public class DiceAbilities : MonoBehaviour
         
         Debug.Log(Dice.diceNum);
 
+        HighRollEnabled = false;
 
     }
 

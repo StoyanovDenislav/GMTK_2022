@@ -3,7 +3,8 @@ guid: 58d34bb377a35b44ea943eacb5b84791
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - DiceScriptableObject: {fileID: 11400000, guid: 3917c1b1d7dacf74c915c229d6df8091, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
