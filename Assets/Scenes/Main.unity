@@ -222,6 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 372939166}
   wayPoint: {x: 0, y: 0}
+  Offset: 0
 --- !u!61 &242586147
 BoxCollider2D:
   m_ObjectHideFlags: 0
