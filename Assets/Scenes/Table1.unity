@@ -476,9 +476,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 575870032}
-        m_TargetAssemblyTypeName: HighRollDice, Assembly-CSharp
-        m_MethodName: HighRoll
+      - m_Target: {fileID: 575870030}
+        m_TargetAssemblyTypeName: Dice, Assembly-CSharp
+        m_MethodName: Roll
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
