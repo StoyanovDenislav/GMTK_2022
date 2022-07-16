@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3673993787258958798}
   - component: {fileID: 5905724248555935659}
   - component: {fileID: 3673993787258958794}
+  - component: {fileID: 5615349402193482018}
   m_Layer: 5
   m_Name: FiftyFifty
   m_TagString: Untagged
@@ -163,6 +164,18 @@ MonoBehaviour:
   DiceScriptableObject: {fileID: 11400000, guid: fe61e1425e9ba694eb293928823798ac, type: 2}
   description: {fileID: 9012875720312605921}
   cardSprite: {fileID: 3673993787007966992}
+--- !u!114 &5615349402193482018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2576096192567485615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54eb10151b291fc45a2adc74cd5fcc7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3087463808888756306
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,19 +8,22 @@ public class InstanciateCards : MonoBehaviour
     public PlayerInventory playerInventory;
     public Canvas Canvas;
     public float hasRun;
+    public Transform Transform;
    
     
 
-    private void LateUpdate()
+    private void Update()
     {
-      
-        for (int i = 0; i < playerInventory.DicePrefabs.Count; i++)
+
+        for (int i = 0; i < playerInventory.DiceScriptableObjects.Count; i++)
         {
-            if (hasRun < playerInventory.DicePrefabs.Count)
+            if (hasRun < playerInventory.AddressableKeysDice.Count)
             {
-                if (playerInventory.DicePrefabs[i].ToString().Contains(playerInventory.DiceScriptableObjects[i]))
+                if (playerInventory.DiceScriptableObjects[i].Contains(playerInventory.AddressableKeysDice[i]))
                 {
-                    GameObject go = Instantiate(playerInventory.DicePrefabs[i].gameObject, new Vector3(playerInventory.DicePrefabs[i].gameObject.transform.position.x + i * 20, 100, 0), Quaternion.identity);
+                    GameObject go = Instantiate(playerInventory.DicePrefabs[i],
+                        new Vector3(Transform.position.x + i * 135, 20, 0),
+                        Quaternion.identity);
 
                     go.transform.parent = Canvas.transform;
 
@@ -28,13 +31,9 @@ public class InstanciateCards : MonoBehaviour
 
                 }
             }
-
-            
-
-           
         }
-       
-        
+
+
     }
 
    
