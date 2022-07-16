@@ -6,7 +6,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Dices", order = 1)]
 public class DiceScriptableObject : ScriptableObject
 {
-    
+
     public GameObject AbilityScript;
+    public Sprite sprite;
+    public string description;
 
 }
