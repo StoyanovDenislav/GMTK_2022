@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150f36d37ab2afa4b884e1328137e329, type: 3}
   m_Name: HighRollDice
   m_EditorClassIdentifier: 
-  AbilityScript: {fileID: 2937220749343865984, guid: 0eddefe076e49584f9b21a8397eb1966, type: 3}
+  AbilityScript: {fileID: 2576096192567485615, guid: 5190376b96bb56a44b97bd1dbda62b21, type: 3}
   sprite: {fileID: 21300000, guid: 2871c9df95f010f42abb42b9c18b492c, type: 3}
   description: Gives you a 20% chance to roll +1 point to your score
+  name: High Roll Dice
+  path: HighRollDiceCard

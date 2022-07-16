@@ -10,5 +10,7 @@ public class DiceScriptableObject : ScriptableObject
     public GameObject AbilityScript;
     public Sprite sprite;
     public string description;
+    public string name;
+    public string path;
 
 }

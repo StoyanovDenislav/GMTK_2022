@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150f36d37ab2afa4b884e1328137e329, type: 3}
   m_Name: LowRollDice
   m_EditorClassIdentifier: 
-  AbilityScript: {fileID: 3124081485484479005, guid: 0f325fbdf0f565e40976dd7be024ce4d, type: 3}
+  AbilityScript: {fileID: 1583526939928359718, guid: c449d6045b93dcc438c0fb36b988d76d, type: 3}
   sprite: {fileID: 21300000, guid: 34dd7c943f0ffb648be5e37c3c37c80e, type: 3}
   description: Gives you a 10% chance to roll -1 point to your enemy's score
+  name: Low Roll Dice
+  path: LowRollDiceCard
