@@ -26,12 +26,12 @@ public class CardUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         transform.position = Vector2.Lerp(new Vector2(normalPos.x, normalPos.y),
-            new Vector2(normalPos.x, normalPos.y + 100), speed );
+            new Vector2(normalPos.x, normalPos.y + 150), speed );
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        transform.position = Vector2.Lerp(new Vector2(normalPos.x, normalPos.y + 100),
+        transform.position = Vector2.Lerp(new Vector2(normalPos.x, normalPos.y + 150),
             new Vector2(normalPos.x, normalPos.y), speed );
     }
 }

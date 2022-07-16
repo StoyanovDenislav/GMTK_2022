@@ -22,8 +22,10 @@ public class InstanciateCards : MonoBehaviour
                 if (playerInventory.DiceScriptableObjects[i].Contains(playerInventory.AddressableKeysDice[i]))
                 {
                     GameObject go = Instantiate(playerInventory.DicePrefabs[i],
-                        new Vector3(Transform.position.x + i * 135, 20, 0),
+                        new Vector3(Transform.position.x + i * 230, 20, 0),
                         Quaternion.identity);
+
+                    go.transform.localScale = new Vector2(2,2);
 
                     go.transform.parent = Canvas.transform;
 
