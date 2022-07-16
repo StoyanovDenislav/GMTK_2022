@@ -18,17 +18,17 @@ MonoBehaviour:
   m_GUID: b6712717e125c3d44bf5050424d591ec
   m_SerializeEntries:
   - m_GUID: c449d6045b93dcc438c0fb36b988d76d
-    m_Address: LowRollDiceCard
+    m_Address: Assets/Scripts/Dice/PlayerDiceAbilities/DiceAbilites/LowRollDice/LowRollDiceCard.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
   - m_GUID: 5190376b96bb56a44b97bd1dbda62b21
-    m_Address: HighRollDiceCard
+    m_Address: Assets/Scripts/Dice/PlayerDiceAbilities/DiceAbilites/HighRollDice/HighRollDiceCard.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2576096192567485615, guid: 5190376b96bb56a44b97bd1dbda62b21, type: 3}
-    m_TargetAsset: {fileID: 2576096192567485615, guid: 5190376b96bb56a44b97bd1dbda62b21, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9c1eae9f8e0844b4b8ee917c21b42797, type: 2}
   m_SchemaSet:
