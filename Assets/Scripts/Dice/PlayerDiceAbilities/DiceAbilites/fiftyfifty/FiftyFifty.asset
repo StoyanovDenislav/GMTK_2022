@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150f36d37ab2afa4b884e1328137e329, type: 3}
+  m_Name: FiftyFifty
+  m_EditorClassIdentifier: 
+  AbilityScript: {fileID: 2576096192567485615, guid: 62e850369ea66d244a92c97aaef6efc4, type: 3}
+  sprite: {fileID: 21300000, guid: b53cccaf9ce56a74684de98f6e74140d, type: 3}
+  description: There's a 50% you can win or lose 3 points from your current roll
+  name: Fifty Fifty
+  path: FiftyFifty

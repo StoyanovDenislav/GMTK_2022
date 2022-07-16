@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DiceScriptableObject: {fileID: 11400000, guid: 8daa69d65e8c8e7469d6e52047e5d8f9, type: 2}
-  description: {fileID: 1946305498}
+  description: {fileID: 0}
   cardSprite: {fileID: 1831526235}
 --- !u!114 &409260247
 MonoBehaviour:
@@ -618,7 +618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DiceScriptableObject: {fileID: 11400000, guid: 3917c1b1d7dacf74c915c229d6df8091, type: 2}
-  description: {fileID: 2051426483}
+  description: {fileID: 0}
   cardSprite: {fileID: 1147246046}
 --- !u!1 &1147246044
 GameObject:
@@ -1276,6 +1276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 6150793934727246558}
   Canvas: {fileID: 575870029}
+  hasRun: 0
 --- !u!114 &6150793934727246558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1290,9 +1291,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DiceScriptableObjects:
   - HighRollDiceCard
-  - LowRollDiceCard
+  - FiftyFifty
   AddressableKeysDice:
-  - LowRollDiceCard
+  - FiftyFifty
   - HighRollDiceCard
   DicePrefabs: []
 --- !u!1 &7113234355097035718

@@ -32,8 +32,8 @@ public class EnemyRoll : MonoBehaviour
         dice.StartCoroutine(dice.RollNumerator());
         enemyCurrentRoll = dice.diceNum;
         canPlay = false;
-        dice.playerCanPlay = true; 
-        
+        dice.playerCanPlay = true;
+       
     }
 
 

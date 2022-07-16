@@ -50,7 +50,7 @@ public class Dice : MonoBehaviour
             StartCoroutine(RollNumerator());
             playerCanPlay = false;
             enemyRoll.canPlay = true;
-
+    
         }
 
         
@@ -64,12 +64,12 @@ public class Dice : MonoBehaviour
     public IEnumerator RollNumerator()
     {
        
-
+        clicked = true;
         diceNum = Random.Range(1, 6);
         btn.transform.GetComponent<Image>().sprite = diceImages[(int) diceNum - 1];
-        clicked = true;
         
-        yield return new WaitForSeconds(5);
+        
+        yield return new WaitForSeconds(3);
 
         clicked = false;
       //  gameObject.SetActive(false);
