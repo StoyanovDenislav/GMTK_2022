@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -12,25 +13,24 @@ public class PlayerInventory : MonoBehaviour
     public List<string> AddressableKeysDice = new List<string>();
    public List<GameObject> DicePrefabs = new List<GameObject>();
    [SerializeField] private AsyncOperationHandle<IList<GameObject>> loadHandle;
-
+   private float maxCards = 3f;
   
 
    private void Awake()
    {
+       InventoryData inventoryData = SaveSystem.LoadPlayer();
+
+       DiceScriptableObjects = inventoryData.DiceScriptableObjects;
+       
        LoadAddressablesForItems();
+      
    }
 
    void Start()
    {
-    //  InventoryData inventoryData = SaveSystem.LoadPlayer();
-
-//       DiceScriptableObjects = inventoryData.DiceScriptableObjects;
-       
-       
-           
-
-          
-
+       DiceScriptableObjects.Sort();
+       AddressableKeysDice.Sort();
+       DicePrefabs.OrderBy(o => o.name).ToList();
 
 
 
@@ -60,30 +60,21 @@ public class PlayerInventory : MonoBehaviour
             Debug.LogWarning("Some assets did not load.");
     }
 
-    // Update is called once per frame
-    void Update()
-    { 
-        /*for (int i = 0; i < DiceScriptableObjects.Count; i++)
-        {
-            if (DiceScriptableObjects.Contains(DicePrefabs[i].name))
-            {
-                
-                Instantiate(DicePrefabs[i].gameObject, new Vector3(20,20,20), Quaternion.identity);
-            }
-        }*/
-        
-      
-    }
+    
 
     void OnTriggerEnter2D(Collider2D colliderHit)
     {
-       
-        DiceScriptableObjects.Add(colliderHit.gameObject.GetComponent<DiceScriptableObjectPickup>().DiceScriptableObject.path);
-        
-       SaveSystem.SavePlayer(this);
-        
-        Destroy(colliderHit.gameObject);
-        
+        if (DiceScriptableObjects.Count < 3)
+        {
+
+            DiceScriptableObjects.Add(colliderHit.gameObject.GetComponent<DiceScriptableObjectPickup>()
+                .DiceScriptableObject.path);
+
+            SaveSystem.SavePlayer(this);
+
+            Destroy(colliderHit.gameObject);
+        }
+
     }
     
 

@@ -21,14 +21,20 @@ MonoBehaviour:
     m_Address: HighRollDiceCard
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2576096192567485615, guid: 5190376b96bb56a44b97bd1dbda62b21, type: 3}
-    m_TargetAsset: {fileID: 2576096192567485615, guid: 5190376b96bb56a44b97bd1dbda62b21, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 62e850369ea66d244a92c97aaef6efc4
     m_Address: FiftyFifty
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 2576096192567485615, guid: 62e850369ea66d244a92c97aaef6efc4, type: 3}
     m_TargetAsset: {fileID: 2576096192567485615, guid: 62e850369ea66d244a92c97aaef6efc4, type: 3}
+  - m_GUID: fe644f79c402a794aaff8f79ad19a295
+    m_Address: SecondChance
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9c1eae9f8e0844b4b8ee917c21b42797, type: 2}
   m_SchemaSet:

@@ -10,12 +10,15 @@ public class HighRollDice : MonoBehaviour
 {
     
     private Dice Dice;
+    private PlayerInventory playerInventory;
+    private string name = "HighRollDiceCard";
     
     
 
     public void Start()
     {
         Dice = FindObjectOfType<Dice>();
+        playerInventory = FindObjectOfType<PlayerInventory>();
       
 
     }
@@ -51,8 +54,20 @@ public class HighRollDice : MonoBehaviour
 
             Debug.Log(Dice.diceNum);
 
+            for (int i = 0; i < playerInventory.DiceScriptableObjects.Count; i++)
+            {
+                if (playerInventory.DiceScriptableObjects[i] == name)
+                {
+                    playerInventory.DiceScriptableObjects.RemoveAt(i);
+                    Destroy(gameObject);
+                    SaveSystem.SavePlayer(playerInventory);
+                    break;
+                }
 
-            Destroy(gameObject);
+                
+            }
+
+            
 
         }
 

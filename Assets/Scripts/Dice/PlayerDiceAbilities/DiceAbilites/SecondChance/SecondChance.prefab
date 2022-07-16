@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 3673993787258958796}
   - component: {fileID: 3673993787258958799}
   - component: {fileID: 3673993787258958798}
-  - component: {fileID: 3673993787258958797}
+  - component: {fileID: 4027917969636464657}
   - component: {fileID: 3673993787258958794}
-  - component: {fileID: -7798524700492701275}
+  - component: {fileID: 3737741277840534911}
   m_Layer: 5
-  m_Name: HighRollDiceCard
+  m_Name: SecondChance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 326.6, y: -161.5}
+  m_AnchoredPosition: {x: 191, y: -161.5}
   m_SizeDelta: {x: 103.0734, y: 181.2123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3673993787258958796
@@ -125,9 +125,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3673993787258958797}
-        m_TargetAssemblyTypeName: HighRollDice, Assembly-CSharp
-        m_MethodName: HighRoll
+      - m_Target: {fileID: 4027917969636464657}
+        m_TargetAssemblyTypeName: SecondChance, Assembly-CSharp
+        m_MethodName: SecondChanceRoll
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -137,7 +137,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3673993787258958797
+--- !u!114 &4027917969636464657
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2576096192567485615}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58d34bb377a35b44ea943eacb5b84791, type: 3}
+  m_Script: {fileID: 11500000, guid: 68efe371f18f3854db9dd7930997e2a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &3673993787258958794
@@ -161,10 +161,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a37663a29b43a4498a3f540339c5d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DiceScriptableObject: {fileID: 11400000, guid: 3917c1b1d7dacf74c915c229d6df8091, type: 2}
+  DiceScriptableObject: {fileID: 11400000, guid: e9fe003d991b8c24d9208866d28a3e5c, type: 2}
   description: {fileID: 9012875720312605921}
   cardSprite: {fileID: 3673993787007966992}
---- !u!114 &-7798524700492701275
+--- !u!114 &3737741277840534911
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54eb10151b291fc45a2adc74cd5fcc7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btn: {fileID: 3673993787258958798}
 --- !u!1 &3087463808888756306
 GameObject:
   m_ObjectHideFlags: 0
