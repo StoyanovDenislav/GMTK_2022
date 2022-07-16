@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public float Offset;
     public GameObject waypoint;
     public ParticleSystem PlayerEffect;
+    public Animator animator;
+
 
     private void Start()
     {
@@ -40,6 +42,11 @@ public class PlayerMovement : MonoBehaviour
             new Vector3(transform.position.x + Offset, transform.position.y, ConstZ), 5 * Time.deltaTime);
 
 
+       
+
+        animator.SetFloat("Horizontal", wayPoint.x);
+        animator.SetFloat("Vertical", wayPoint.y);
+        animator.SetFloat("Speed", wayPoint.sqrMagnitude);
     }
 
     void CreatePlayerEffect()
