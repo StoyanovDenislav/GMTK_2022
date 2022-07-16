@@ -7,7 +7,7 @@ public class InstanciateCards : MonoBehaviour
 {
     public PlayerInventory playerInventory;
     public Canvas Canvas;
-
+    public float hasRun;
    
     
 
@@ -16,16 +16,20 @@ public class InstanciateCards : MonoBehaviour
       
         for (int i = 0; i < playerInventory.DicePrefabs.Count; i++)
         {
-            if (playerInventory.DicePrefabs[i].ToString().Contains(playerInventory.DiceScriptableObjects[i]))
+            if (hasRun < playerInventory.DicePrefabs.Count)
             {
-               GameObject go = Instantiate(playerInventory.DicePrefabs[i], new Vector3(0, 0, 0), Quaternion.identity);
+                if (playerInventory.DicePrefabs[i].ToString().Contains(playerInventory.DiceScriptableObjects[i]))
+                {
+                    GameObject go = Instantiate(playerInventory.DicePrefabs[i].gameObject, new Vector3(playerInventory.DicePrefabs[i].gameObject.transform.position.x + i * 20, 100, 0), Quaternion.identity);
 
-               go.transform.parent = Canvas.transform;
-               
-               break;
+                    go.transform.parent = Canvas.transform;
 
+                    hasRun++;
 
+                }
             }
+
+            
 
            
         }

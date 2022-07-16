@@ -477,7 +477,7 @@ MonoBehaviour:
   clicked: 0
   diceNum: 0
   playerCanPlay: 1
-  enemyRoll: {fileID: 0}
+  enemyRoll: {fileID: 173607984}
 --- !u!224 &896825599
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1275,6 +1275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 6150793934727246558}
+  Canvas: {fileID: 575870029}
 --- !u!114 &6150793934727246558
 MonoBehaviour:
   m_ObjectHideFlags: 0
