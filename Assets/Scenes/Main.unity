@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 242586147}
   - component: {fileID: 242586148}
   - component: {fileID: 242586149}
+  - component: {fileID: 242586150}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -227,7 +228,7 @@ MonoBehaviour:
   Offset: 0
   waypoint: {fileID: 1671426620}
   PlayerEffect: {fileID: 1829810958}
-  animator: {fileID: 0}
+  animator: {fileID: 242586150}
 --- !u!61 &242586147
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -293,6 +294,25 @@ MonoBehaviour:
   - FiftyFifty
   - SecondChance
   DicePrefabs: []
+--- !u!95 &242586150
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242586143}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 820f0fb10c8a9a44a99fbeda13e03a42, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &372939164
 GameObject:
   m_ObjectHideFlags: 0
