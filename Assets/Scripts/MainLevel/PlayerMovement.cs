@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             wayPoint = camera.ScreenToWorldPoint(Input.mousePosition);
-            CreatePlayerEffect();
+            //CreatePlayerEffect();
         }
         
         transform.position = Vector2.MoveTowards(transform.position, wayPoint, 10 * Time.deltaTime);
@@ -42,16 +42,19 @@ public class PlayerMovement : MonoBehaviour
             new Vector3(transform.position.x + Offset, transform.position.y, ConstZ), 5 * Time.deltaTime);
 
 
-       
 
-        animator.SetFloat("Horizontal", wayPoint.x);
-        animator.SetFloat("Vertical", wayPoint.y);
-        animator.SetFloat("Speed", wayPoint.sqrMagnitude);
+        animator.SetFloat("Horizontal", transform.position.x);
+        animator.SetFloat("Vertical", transform.position.y);
+        animator.SetFloat("Speed", transform.position.sqrMagnitude);
+        
+    
+    
     }
 
+    /*
     void CreatePlayerEffect()
     {
         PlayerEffect.Play();
     }
-
+    */
 }
