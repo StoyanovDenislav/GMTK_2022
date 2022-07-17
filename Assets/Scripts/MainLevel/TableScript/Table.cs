@@ -5,45 +5,39 @@ using UnityEngine.SceneManagement;
 
 public class Table : MonoBehaviour
 {
+    private bool collided = false;
     [SerializeField] private GameObject UiElement;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            //UiElement.SetActive(true);
+            collided = true;
+        }
+        
+    }
+
+    void Update()
+    {
+        if (collided == true)
+        {
             UiElement.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && UiElement == true)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                SceneManager.LoadScene("Table1");
             }
         }
     }
+
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            collided = false;
             UiElement.SetActive(false);
         }
     }
-    /*
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (gameObject.name == "Table")
-        {
-            SceneManager.LoadScene("Table1");
-        }
-    }
-    */
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
