@@ -28,12 +28,15 @@ public class Dice : MonoBehaviour
 
    public HealthBar HB;
 
+   public EnemyHealthBar EHB;
+
    public bool GameOver = false;
 
    void Start()
    {
        enemyRoll = FindObjectOfType<EnemyRoll>();
        HB = FindObjectOfType<HealthBar>();
+       EHB = FindObjectOfType<EnemyHealthBar>();
    }
 
 
@@ -41,6 +44,7 @@ public class Dice : MonoBehaviour
    private void Update()
     {
         HB.UpdateHB();
+        EHB.UpdateEHB();
 
         if (HealthBarPoints == 3)
         {

@@ -45,12 +45,11 @@ public class SecondChance : MonoBehaviour
                         break;
                     }
                 }
-
-         
                 
-
 
 
         }
     }
+
+    
 }

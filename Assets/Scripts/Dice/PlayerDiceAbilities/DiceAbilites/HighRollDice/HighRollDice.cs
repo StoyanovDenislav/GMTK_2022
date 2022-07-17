@@ -12,6 +12,7 @@ public class HighRollDice : MonoBehaviour
     private Dice Dice;
     private PlayerInventory playerInventory;
     private string name = "HighRollDiceCard";
+    public bool highRoll = false;
     
     
 
@@ -33,6 +34,7 @@ public class HighRollDice : MonoBehaviour
 
             if (randomNumber <= 20)
             {
+                highRoll = true;
                 Dice.Roll();
 
                 Dice.lastScore = Dice.diceNum;
@@ -49,6 +51,7 @@ public class HighRollDice : MonoBehaviour
             }
             else
             {
+                highRoll = false;
                 Dice.Roll();
             }
 

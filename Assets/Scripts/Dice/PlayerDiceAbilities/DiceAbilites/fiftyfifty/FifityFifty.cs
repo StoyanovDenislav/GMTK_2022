@@ -7,7 +7,8 @@ public class FifityFifty : MonoBehaviour
     private Dice Dice;
     private string name = "FiftyFifty";
     private PlayerInventory playerInventory;
-
+    public bool won = false;
+    public bool lost = false;
 
 
     public void Start()
@@ -16,6 +17,7 @@ public class FifityFifty : MonoBehaviour
         playerInventory = FindObjectOfType<PlayerInventory>();
 
     }
+    
 
 
 
@@ -27,6 +29,7 @@ public class FifityFifty : MonoBehaviour
 
             if (randomNumber <= 50)
             {
+                won = true;
                 Dice.Roll();
 
                 Dice.diceNum += 3;
@@ -48,6 +51,7 @@ public class FifityFifty : MonoBehaviour
             }
             else
             {
+                lost = true;
                 Dice.Roll();
                 Dice.diceNum -= 3;
                 Dice.lastScore = Dice.diceNum;

@@ -7,7 +7,7 @@ public class EnemyRoll : MonoBehaviour
     private Dice dice;
     public bool canPlay = false;
     public float enemyCurrentRoll;
-    public float HealthBarPoints;
+    public float HealthBarPoints = 0;
     void Start()
     {
         dice = FindObjectOfType<Dice>();
