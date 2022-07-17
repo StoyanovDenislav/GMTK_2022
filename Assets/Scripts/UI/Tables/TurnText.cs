@@ -33,7 +33,7 @@ public class TurnText : MonoBehaviour
 
         if (dice.GameOver)
         {
-            TextMesh.text = "Game Over! You lost!";
+            StartCoroutine(GameLost());
         }
         if (dice.Win)
         {
@@ -45,13 +45,13 @@ public class TurnText : MonoBehaviour
 
     }
 
-    /*IEnumerable GameLost()
+    IEnumerator GameLost()
     {
         TextMesh.text = "You lost!"; 
         dice.GameOver = false;
         yield return new WaitForSeconds(5);
-        SceneManager.LoadScene();
-    }*/
+        SceneManager.LoadScene("GameOver");
+    }
     
     IEnumerator GameWin()
     {

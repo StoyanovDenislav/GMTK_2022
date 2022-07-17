@@ -605,6 +605,7 @@ MonoBehaviour:
   HB: {fileID: 0}
   EHB: {fileID: 0}
   GameOver: 0
+  Win: 0
 --- !u!1 &606746910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1842,10 +1843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6742e86020a1eba4798d55dfb1c79998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DiceScriptableObjects:
-  - HighRollDiceCard
-  - HighRollDiceCard
-  - HighRollDiceCard
+  DiceScriptableObjects: []
   AddressableKeysDice:
   - HighRollDiceCard
   - FiftyFifty

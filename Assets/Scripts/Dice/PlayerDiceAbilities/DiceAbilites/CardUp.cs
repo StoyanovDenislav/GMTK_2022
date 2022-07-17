@@ -27,4 +27,13 @@ public class CardUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         LeanTween.move(gameObject, new Vector2(normalPos.x, normalPos.y), 0.3f);
     }
+   /*public void Hover()
+   {
+       LeanTween.move(gameObject, new Vector2(normalPos.x, normalPos.y + 150), 0.3f);
+   }
+
+   public void UnHover()
+   {
+       LeanTween.move(gameObject, new Vector2(normalPos.x, normalPos.y), 0.3f);
+   }*/
 }
