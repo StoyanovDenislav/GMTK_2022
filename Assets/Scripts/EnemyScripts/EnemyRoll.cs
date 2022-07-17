@@ -8,6 +8,7 @@ public class EnemyRoll : MonoBehaviour
     public bool canPlay = false;
     public float enemyCurrentRoll;
     public float HealthBarPoints = 0;
+    public AudioSource dice15;
     void Start()
     {
         dice = FindObjectOfType<Dice>();
@@ -24,7 +25,10 @@ public class EnemyRoll : MonoBehaviour
             
 
         }
-
+        if (dice.clicked)
+        {
+            dice15.Play();
+        }
     }
 
     IEnumerator EnemyRollDice()
@@ -39,7 +43,7 @@ public class EnemyRoll : MonoBehaviour
         dice.RoundFinished = true;
 
 
-
+        
 
 
 

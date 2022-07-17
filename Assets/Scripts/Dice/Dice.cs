@@ -33,7 +33,8 @@ public class Dice : MonoBehaviour
    public bool GameOver = false;
    public bool Win = false;
 
-   void Start()
+    public AudioSource dice15;
+    void Start()
    {
        enemyRoll = FindObjectOfType<EnemyRoll>();
        HB = FindObjectOfType<HealthBar>();
@@ -87,7 +88,7 @@ public class Dice : MonoBehaviour
             StartCoroutine(RollNumerator());
             lastScore = diceNum;
             enemyRoll.canPlay = true;
-            
+            dice15.Play();
         }
 
 
@@ -95,14 +96,15 @@ public class Dice : MonoBehaviour
 
     public IEnumerator RollNumerator()
     {
-       
+
+
         clicked = true;
         diceNum = Random.Range(1, 6);
         btn.transform.GetComponent<Image>().sprite = diceImages[(int) diceNum - 1];
         
-        
-        yield return new WaitForSeconds(3);
 
+        yield return new WaitForSeconds(3);
+        
         clicked = false;
       //  gameObject.SetActive(false);
 
