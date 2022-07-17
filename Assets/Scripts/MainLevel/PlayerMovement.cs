@@ -12,12 +12,10 @@ public class PlayerMovement : MonoBehaviour
     public GameObject waypoint;
     public ParticleSystem PlayerEffect;
     public Animator animator;
-
-
     private void Start()
     {
         camera = FindObjectOfType<Camera>();
-        
+
     }
 
     void Update()
@@ -26,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             wayPoint = camera.ScreenToWorldPoint(Input.mousePosition);
-            //CreatePlayerEffect();
+
         }
         
         transform.position = Vector2.MoveTowards(transform.position, wayPoint, 10 * Time.deltaTime);
@@ -42,19 +40,11 @@ public class PlayerMovement : MonoBehaviour
             new Vector3(transform.position.x + Offset, transform.position.y, ConstZ), 5 * Time.deltaTime);
 
 
-
         animator.SetFloat("Horizontal", transform.position.x);
         animator.SetFloat("Vertical", transform.position.y);
-        animator.SetFloat("Speed", transform.position.sqrMagnitude);
-        
-    
-    
+        animator.SetFloat("Magnitude", transform.position.magnitude);
+      
     }
 
-    /*
-    void CreatePlayerEffect()
-    {
-        PlayerEffect.Play();
-    }
-    */
+    
 }
