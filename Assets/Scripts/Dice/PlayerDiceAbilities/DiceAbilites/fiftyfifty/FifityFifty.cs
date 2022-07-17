@@ -31,14 +31,16 @@ public class FifityFifty : MonoBehaviour
 
                 Dice.diceNum += 3;
 
-                if (Dice.diceNum >= 6)
+                Dice.lastScore = Dice.diceNum;
+
+                if (Dice.lastScore >= 6)
                 {
-                    Dice.diceNum = 6;
+                    Dice.lastScore = 6;
                 }
 
 
 
-                Debug.Log(Dice.diceNum);
+                Debug.Log(Dice.lastScore);
 
 
                 Destroy(gameObject);
@@ -48,12 +50,13 @@ public class FifityFifty : MonoBehaviour
             {
                 Dice.Roll();
                 Dice.diceNum -= 3;
-                if (Dice.diceNum <= 1)
+                Dice.lastScore = Dice.diceNum;
+                if (Dice.lastScore <= 1)
                 {
-                    Dice.diceNum = 1;
+                    Dice.lastScore = 1;
                 }
 
-                Debug.Log(Dice.diceNum);
+                Debug.Log(Dice.lastScore);
 
                 for (int i = 0; i < playerInventory.DiceScriptableObjects.Count; i++)
                 {

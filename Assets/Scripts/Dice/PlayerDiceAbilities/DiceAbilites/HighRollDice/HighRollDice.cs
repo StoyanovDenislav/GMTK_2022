@@ -35,11 +35,13 @@ public class HighRollDice : MonoBehaviour
             {
                 Dice.Roll();
 
-                if (Dice.diceNum == 6)
+                Dice.lastScore = Dice.diceNum;
+
+                if (Dice.lastScore == 6)
                 {
-                    Dice.diceNum = 6;
+                    Dice.lastScore = 6;
                 }
-                else Dice.diceNum += 1;
+                else Dice.lastScore += 1;
 
 
 
@@ -52,7 +54,7 @@ public class HighRollDice : MonoBehaviour
 
 
 
-            Debug.Log(Dice.diceNum);
+            Debug.Log(Dice.lastScore);
 
             for (int i = 0; i < playerInventory.DiceScriptableObjects.Count; i++)
             {

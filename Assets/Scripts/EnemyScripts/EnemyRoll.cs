@@ -7,6 +7,7 @@ public class EnemyRoll : MonoBehaviour
     private Dice dice;
     public bool canPlay = false;
     public float enemyCurrentRoll;
+    public float HealthBarPoints;
     void Start()
     {
         dice = FindObjectOfType<Dice>();
@@ -20,6 +21,7 @@ public class EnemyRoll : MonoBehaviour
         {
 
             StartCoroutine(EnemyRollDice());
+            
 
         }
 
@@ -32,8 +34,18 @@ public class EnemyRoll : MonoBehaviour
         dice.StartCoroutine(dice.RollNumerator());
         enemyCurrentRoll = dice.diceNum;
         canPlay = false;
-        dice.playerCanPlay = true;
-       
+        dice.playerCanPlay = false;
+        yield return new WaitForSeconds(3);
+        dice.RoundFinished = true;
+
+
+
+
+
+
+
+
+
     }
 
 
