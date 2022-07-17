@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject waypoint;
     public ParticleSystem PlayerEffect;
     public Animator animator;
+    public AudioSource walkingSound;
     private void Start()
     {
         camera = FindObjectOfType<Camera>();
@@ -33,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         {
             waypoint.SetActive(true);
             waypoint.transform.position = wayPoint;
+            walkingSound.Play();
         }
         else waypoint.SetActive(false);
         
