@@ -14,11 +14,14 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Main.unity
     guid: 332f7fefade25db4692608a9fe85ceb6
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Table1.unity
     guid: a1e1a709cd2fbb346a3840be6fddbc24
   - enabled: 1
     path: Assets/Scenes/Table2.unity
     guid: cf80e9286befdc24e8a6759bf247202b
+  - enabled: 1
+    path: Assets/Scenes/Table3.unity
+    guid: 20ec3c814005cbd4da4c2e9a4005dcdf
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: dbc3ad137d5f015459eeba7d3a23ef28, type: 2}
