@@ -31,6 +31,7 @@ public class Dice : MonoBehaviour
    public EnemyHealthBar EHB;
 
    public bool GameOver = false;
+   public bool Win = false;
 
    void Start()
    {
@@ -51,8 +52,14 @@ public class Dice : MonoBehaviour
             GameOver = true;
             enemyRoll.canPlay = false;
             playerCanPlay = false;
+            
 
-        }                                                                    
+        } else if (enemyRoll.HealthBarPoints == 3)
+        {
+            Win = true;
+            enemyRoll.canPlay = false;
+            playerCanPlay = false;
+        }
 
         if (!clicked && !RoundFinished && !GameOver)
         {
@@ -76,9 +83,9 @@ public class Dice : MonoBehaviour
 
         if (playerCanPlay && !clicked)
         {
+           
             StartCoroutine(RollNumerator());
             lastScore = diceNum;
-            playerCanPlay = false;
             enemyRoll.canPlay = true;
             
         }

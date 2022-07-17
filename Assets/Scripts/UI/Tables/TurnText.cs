@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TurnText : MonoBehaviour
 {
@@ -34,7 +35,29 @@ public class TurnText : MonoBehaviour
         {
             TextMesh.text = "Game Over! You lost!";
         }
+        if (dice.Win)
+        {
+            StartCoroutine(GameWin());
+        }
+        
+        
 
 
+    }
+
+    /*IEnumerable GameLost()
+    {
+        TextMesh.text = "You lost!"; 
+        dice.GameOver = false;
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene();
+    }*/
+    
+    IEnumerator GameWin()
+    {
+        TextMesh.text = "You win!";
+        dice.Win = false;
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("Main");
     }
 }

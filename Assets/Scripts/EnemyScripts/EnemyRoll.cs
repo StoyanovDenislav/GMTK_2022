@@ -19,7 +19,7 @@ public class EnemyRoll : MonoBehaviour
     {
         if (canPlay && !dice.clicked)
         {
-
+            dice.playerCanPlay = false;
             StartCoroutine(EnemyRollDice());
             
 
