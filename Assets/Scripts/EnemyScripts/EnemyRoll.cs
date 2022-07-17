@@ -27,7 +27,7 @@ public class EnemyRoll : MonoBehaviour
         }
         if (dice.clicked)
         {
-            dice15.Play();
+            
         }
     }
 
@@ -37,6 +37,7 @@ public class EnemyRoll : MonoBehaviour
         
         dice.StartCoroutine(dice.RollNumerator());
         enemyCurrentRoll = dice.diceNum;
+        dice15.Play();
         canPlay = false;
         dice.playerCanPlay = false;
         yield return new WaitForSeconds(3);

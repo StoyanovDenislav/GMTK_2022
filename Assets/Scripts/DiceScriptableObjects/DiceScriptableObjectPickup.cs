@@ -28,8 +28,7 @@ public class DiceScriptableObjectPickup : MonoBehaviour
                     }
             
                     else  gameObject.GetComponent<SpriteRenderer>().sprite = DiceScriptableObject.sprite;
-            
-           
+                    
                 }
             }
         } else gameObject.GetComponent<SpriteRenderer>().sprite = DiceScriptableObject.sprite;
