@@ -20,7 +20,7 @@ public class CardUp : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        LeanTween.move(gameObject, new Vector2(normalPos.x, normalPos.y + 150), 0.3f);
+        LeanTween.move(gameObject, new Vector2(normalPos.x, normalPos.y + 350), 0.3f);
     }
 
     public void OnPointerExit(PointerEventData eventData)

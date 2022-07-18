@@ -64,7 +64,7 @@ public class Dice : MonoBehaviour
 
         if (!clicked && !RoundFinished && !GameOver)
         {
-            var randomNumber = Random.Range(0, 5);
+            var randomNumber = Random.Range(0, 6);
             btn.transform.GetComponent<Image>().sprite = diceImages[randomNumber];
             btn.transform.GetComponent<Image>().color = new Color(255, 255, 255, 1);
            
@@ -99,7 +99,7 @@ public class Dice : MonoBehaviour
 
 
         clicked = true;
-        diceNum = Random.Range(1, 6);
+        diceNum = Random.Range(1, 7);
         btn.transform.GetComponent<Image>().sprite = diceImages[(int) diceNum - 1];
         
 

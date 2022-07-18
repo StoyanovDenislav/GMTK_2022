@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -71,7 +70,7 @@ public class PlayerInventory : MonoBehaviour
                 .DiceScriptableObject.path);
 
             SaveSystem.SavePlayer(this);
-
+            LeanTween.alpha(colliderHit.gameObject, 0f, 1f).setEase(LeanTweenType.linear).setDelay(2);
             Destroy(colliderHit.gameObject);
         }
 

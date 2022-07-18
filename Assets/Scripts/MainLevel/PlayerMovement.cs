@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,40 +14,67 @@ public class PlayerMovement : MonoBehaviour
     public ParticleSystem PlayerEffect;
     public Animator animator;
     public AudioSource walkingSound;
+    private Rigidbody2D rb;
     private void Start()
     {
         camera = FindObjectOfType<Camera>();
+        rb = FindObjectOfType<Rigidbody2D>();
 
     }
 
     void Update()
     {
-       
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            camera.orthographicSize--;
+        }
+        
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            camera.orthographicSize++;
+        }
+
+        if (camera.orthographicSize < 0)
+        {
+            camera.orthographicSize = 0;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             wayPoint = camera.ScreenToWorldPoint(Input.mousePosition);
 
         }
         
-        transform.position = Vector2.MoveTowards(transform.position, wayPoint, 10 * Time.deltaTime);
+        camera.transform.position = Vector3.Lerp( new Vector3(camera.transform.position.x, camera.transform.position.y, ConstZ), 
+            new Vector3(wayPoint.x, wayPoint.y, ConstZ), 10 * Time.deltaTime);
             
-        if (!waypoint.activeSelf && transform.position.x != wayPoint.x || transform.position.y != wayPoint.y)
+        if (!waypoint && rb.position.y != wayPoint.y || rb.position.x != wayPoint.x)
+            
         {
             waypoint.SetActive(true);
             waypoint.transform.position = wayPoint;
             walkingSound.Play();
         }
-        else waypoint.SetActive(false);
+        else
+        { 
+            waypoint.SetActive(false);
+           
+           
+
+        }
+
         
-        camera.transform.position = Vector3.Lerp(new Vector3(camera.transform.position.x, camera.transform.position.y, ConstZ), 
-            new Vector3(transform.position.x + Offset, transform.position.y, ConstZ), 5 * Time.deltaTime);
 
 
-        animator.SetFloat("Horizontal", transform.position.x);
-        animator.SetFloat("Vertical", transform.position.y);
+
+        animator.SetFloat("Horizontal", rb.position.x);
+        animator.SetFloat("Vertical", rb.position.y);
         animator.SetFloat("Magnitude", transform.position.magnitude);
       
     }
 
-    
+    private void FixedUpdate()
+    {
+        rb.position = Vector2.MoveTowards(rb.position, wayPoint, 10 * Time.deltaTime);
+    }
 }
