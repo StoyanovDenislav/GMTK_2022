@@ -27,6 +27,7 @@ public class WinCondition : MonoBehaviour
                 Dice.diceNum = 0;
                 EnemyRoll.enemyCurrentRoll = 0;
                 EnemyRoll.canPlay = false;
+                Dice.CardUsed = false;
                 
                 
                 StartCoroutine(SwitchToPlayer());
@@ -37,7 +38,7 @@ public class WinCondition : MonoBehaviour
                 Dice.lastScore = 0;
                 Dice.diceNum = 0;
                 EnemyRoll.enemyCurrentRoll = 0;
-               
+                Dice.CardUsed = false;
                 
                 
                 StartCoroutine(SwitchToPlayer());
@@ -47,7 +48,7 @@ public class WinCondition : MonoBehaviour
                 Dice.lastScore = 0;
                 Dice.diceNum = 0;
                 EnemyRoll.enemyCurrentRoll = 0;
-               
+                Dice.CardUsed = false;
                 
                 
                 StartCoroutine(SwitchToPlayer());

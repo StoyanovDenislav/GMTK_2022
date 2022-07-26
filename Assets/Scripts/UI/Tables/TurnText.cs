@@ -18,10 +18,13 @@ public class TurnText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (dice.playerCanPlay)
         {
             TextMesh.text = "Player's turn";
-        } 
+        }
+        
         if (EnemyRoll.canPlay)
         {
             TextMesh.text = "Rival's turn";

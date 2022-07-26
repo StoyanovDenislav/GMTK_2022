@@ -26,17 +26,11 @@ public class DiceScriptableObjectPickup : MonoBehaviour
                     {
                         gameObject.SetActive(false);
                     }
-            
-                    else  gameObject.GetComponent<SpriteRenderer>().sprite = DiceScriptableObject.sprite;
-                    
+
+                    else gameObject.GetComponent<SpriteRenderer>().sprite = DiceScriptableObject.sprite;
                 }
             }
-        } else gameObject.GetComponent<SpriteRenderer>().sprite = DiceScriptableObject.sprite;
-
-        
-
-       
-
-        
+        }
+        else gameObject.GetComponent<SpriteRenderer>().sprite = DiceScriptableObject.sprite;
     }
 }

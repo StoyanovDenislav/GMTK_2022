@@ -12,6 +12,7 @@ public class EnemyRoll : MonoBehaviour
     void Start()
     {
         dice = FindObjectOfType<Dice>();
+        
 
     }
 
@@ -22,13 +23,9 @@ public class EnemyRoll : MonoBehaviour
         {
             dice.playerCanPlay = false;
             StartCoroutine(EnemyRollDice());
-            
 
         }
-        if (dice.clicked)
-        {
-            
-        }
+       
     }
 
     IEnumerator EnemyRollDice()
@@ -41,17 +38,13 @@ public class EnemyRoll : MonoBehaviour
         canPlay = false;
         dice.playerCanPlay = false;
         yield return new WaitForSeconds(3);
+
         dice.RoundFinished = true;
-
-
         
-
-
-
-
-
+        
 
     }
 
+    
 
 }

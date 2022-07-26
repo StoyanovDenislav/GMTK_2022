@@ -10,17 +10,19 @@ public class HighRollDice : MonoBehaviour
 {
     
     private Dice Dice;
-    private PlayerInventory playerInventory;
-    private string name = "HighRollDiceCard";
     public bool highRoll = false;
+    private PlayerInventory playerInventory;
+    private CardAnimations cardanims;
     
     
 
     public void Start()
     {
         Dice = FindObjectOfType<Dice>();
-        playerInventory = FindObjectOfType<PlayerInventory>();
-      
+        playerInventory= FindObjectOfType<PlayerInventory>();
+        cardanims = GetComponent<CardAnimations>();
+        
+        
 
     }
 
@@ -58,21 +60,20 @@ public class HighRollDice : MonoBehaviour
 
 
             Debug.Log(Dice.lastScore);
-
-            for (int i = 0; i < playerInventory.DiceScriptableObjects.Count; i++)
+            
+            /*for (int i = 0; i < playerInventory.DiceScriptableObjects.Count; i++)
             {
-                if (playerInventory.DiceScriptableObjects[i] == name)
+                if (playerInventory.DiceScriptableObjects[i] == gameObject.name)
                 {
                     playerInventory.DiceScriptableObjects.RemoveAt(i);
                     Destroy(gameObject);
                     SaveSystem.SavePlayer(playerInventory);
+                    
                     break;
                 }
-
-                
-            }
-
+            }*/
             
+            cardanims.StartCoroutine(cardanims.Anims());
 
         }
 

@@ -29,6 +29,8 @@ public class InstanciateCards : MonoBehaviour
 
                         go.transform.localScale = new Vector2(2, 2);
 
+                        go.name = playerInventory.DicePrefabs[x].name;
+
                         go.transform.parent = Canvas.transform;
 
                         hasRun++;
