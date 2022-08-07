@@ -27,7 +27,7 @@ public class CardEventDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!dice.CardUsed && dice.clicked && diff.ToLower() == "Easy".ToLower() && !dice.RoundFinished)
+        if (!dice.CardUsed && dice.clicked && diff.ToLower() == "Easy".ToLower() && !dice.RoundFinished && dice.playerCanPlay)
         {
             CardsUsed.text = "You have unused cards! You have 10 seconds to choose.";
         }
@@ -49,7 +49,6 @@ public class CardEventDisplay : MonoBehaviour
 
         if (fiftyFifty.won)
         {
-            Debug.Log("Event Started");
             text = "+3";
             StartCoroutine(textShow());
             fiftyFifty.won = false;

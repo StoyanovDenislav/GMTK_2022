@@ -70,7 +70,7 @@ public class WinCondition : MonoBehaviour
         
         Dice.RoundFinished = false;
         
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         
         Dice.playerCanPlay = true;
     }

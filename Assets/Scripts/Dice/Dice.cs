@@ -55,6 +55,17 @@ public class Dice : MonoBehaviour
 
     private void Update()
     {
+        if (!clicked && !RoundFinished && !GameOver)
+        {
+            var randomNumber = Random.Range(0, 6);
+            btn.transform.GetComponent<Image>().sprite = diceImages[randomNumber];
+            btn.transform.GetComponent<Image>().color = new Color(255, 255, 255, 1);
+        }
+        else if (RoundFinished || GameOver)
+        {
+            btn.transform.GetComponent<Image>().color = new Color(0, 0, 0, 0);
+        }
+        
         HB.UpdateHB();
         EHB.UpdateEHB();
 
@@ -71,16 +82,7 @@ public class Dice : MonoBehaviour
             playerCanPlay = false;
         }
 
-        if (!clicked && !RoundFinished && !GameOver)
-        {
-            var randomNumber = Random.Range(0, 6);
-            btn.transform.GetComponent<Image>().sprite = diceImages[randomNumber];
-            btn.transform.GetComponent<Image>().color = new Color(255, 255, 255, 1);
-        }
-        else if (RoundFinished || GameOver)
-        {
-            btn.transform.GetComponent<Image>().color = new Color(0, 0, 0, 0);
-        }
+       
 
        
 
@@ -122,10 +124,11 @@ public class Dice : MonoBehaviour
 
     public IEnumerator UnusedCards()
     {
-        Debug.Log("You have unused cards!");
+
+        playerCanPlay = true;
         
         yield return new WaitForSeconds(10);
-
+        
         clicked = false;
 
     }

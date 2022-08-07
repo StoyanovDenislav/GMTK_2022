@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
         camera.transform.position = Vector3.Lerp( new Vector3(camera.transform.position.x, camera.transform.position.y, ConstZ), 
-            new Vector3(wayPoint.x, wayPoint.y, ConstZ), 10 * Time.deltaTime);
+            new Vector3(rb.transform.position.x, rb.transform.position.y, ConstZ), 10 * Time.deltaTime);
             
         if (Agent.acceleration > 0) //&& rb.position.y != wayPoint.y || rb.position.x != wayPoint.x
         {
