@@ -7,6 +7,7 @@ public class WinCondition : MonoBehaviour
 {
     private Dice Dice;
     private EnemyRoll EnemyRoll;
+
     void Start()
     {
         Dice = FindObjectOfType<Dice>();
@@ -18,18 +19,17 @@ public class WinCondition : MonoBehaviour
     {
         if (Dice.RoundFinished)
         {
-            
             if (Dice.lastScore > EnemyRoll.enemyCurrentRoll)
             {
                 EnemyRoll.HealthBarPoints++;
-                
+
                 Dice.lastScore = 0;
                 Dice.diceNum = 0;
                 EnemyRoll.enemyCurrentRoll = 0;
                 EnemyRoll.canPlay = false;
                 Dice.CardUsed = false;
-                
-                
+
+
                 StartCoroutine(SwitchToPlayer());
             }
             else if (Dice.lastScore < EnemyRoll.enemyCurrentRoll)
@@ -39,39 +39,30 @@ public class WinCondition : MonoBehaviour
                 Dice.diceNum = 0;
                 EnemyRoll.enemyCurrentRoll = 0;
                 Dice.CardUsed = false;
-                
-                
+
+
                 StartCoroutine(SwitchToPlayer());
-                
-            } else if (Dice.lastScore == EnemyRoll.enemyCurrentRoll)
+            }
+            else if (Dice.lastScore == EnemyRoll.enemyCurrentRoll)
             {
                 Dice.lastScore = 0;
                 Dice.diceNum = 0;
                 EnemyRoll.enemyCurrentRoll = 0;
                 Dice.CardUsed = false;
-                
-                
+
+
                 StartCoroutine(SwitchToPlayer());
-                
             }
-
-
-
         }
-        
-        
-
     }
 
     public IEnumerator SwitchToPlayer()
-    
+
     {
-        yield return new WaitForSeconds(3);
-        
+        yield return new WaitForSeconds(5);
+
         Dice.RoundFinished = false;
-        
-        yield return new WaitForSeconds(2);
-        
+
         Dice.playerCanPlay = true;
     }
 }

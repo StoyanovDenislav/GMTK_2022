@@ -10,31 +10,20 @@ public class CardEventDisplay : MonoBehaviour
     public FifityFifty fiftyFifty;
     public HighRollDice HighRollDice;
     public TextMeshProUGUI TextMesh;
-    public TextMeshProUGUI CardsUsed;
-    private Dice dice;
-    private string diff;
    
 
     public string text = " ";
 
     private void Start()
     {
-        dice = FindObjectOfType<Dice>();
-        DifficultyData difficultyData = SaveSystem.LoadDifficulty();
-        diff = difficultyData.diff;
+      
+      
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!dice.CardUsed && dice.clicked && diff.ToLower() == "Easy".ToLower() && !dice.RoundFinished && dice.playerCanPlay)
-        {
-            CardsUsed.text = "You have unused cards! You have 10 seconds to choose.";
-        }
-        else
-        {
-            CardsUsed.text = " ";
-        }
+       
 
         fiftyFifty = FindObjectOfType<FifityFifty>();
 
@@ -64,12 +53,7 @@ public class CardEventDisplay : MonoBehaviour
 
        
     }
-
-    private void LateUpdate()
-    {
-       
-        
-    }
+    
 
 
     IEnumerator textShow()

@@ -22,7 +22,7 @@ public class CardAnimations : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        LeanTween.move(gameObject, new Vector2(normalPos.x, normalPos.y + 250), 0.3f);
+        LeanTween.move(gameObject, new Vector2(normalPos.x, normalPos.y + Screen.height / 2 - 100), 0.3f);
     }
 
     public void OnPointerExit(PointerEventData eventData)

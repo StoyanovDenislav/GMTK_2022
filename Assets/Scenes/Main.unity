@@ -63659,15 +63659,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: a304045b9426fb845887e8e8dde4ed13, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 3
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -63735,7 +63735,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 1.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -63976,7 +63976,8 @@ MonoBehaviour:
   waypoint: {fileID: 1671426620}
   PlayerEffect: {fileID: 1829810958}
   animator: {fileID: 242586150}
-  walkingSound: {fileID: 0}
+  walkingSound: {fileID: 102131452}
+  audioClip: {fileID: 8300000, guid: a304045b9426fb845887e8e8dde4ed13, type: 3}
   Agent: {fileID: 242586151}
 --- !u!61 &242586147
 BoxCollider2D:

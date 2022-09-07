@@ -994,7 +994,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1822193404
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1367,7 +1367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7347536a034949d4c91d77a03d148290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Texture2d: {fileID: 2800000, guid: 3c1c7821a271dd848a686ce35726b20e, type: 3}
+  Texture2d: {fileID: 2800000, guid: 6ab14a5a5df181b42979514866f8ac3f, type: 3}
 --- !u!1 &8219238323808210164
 GameObject:
   m_ObjectHideFlags: 0

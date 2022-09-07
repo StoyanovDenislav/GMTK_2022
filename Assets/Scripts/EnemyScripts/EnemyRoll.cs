@@ -21,6 +21,7 @@ public class EnemyRoll : MonoBehaviour
     {
         if (canPlay && !dice.clicked)
         {
+           
             dice.playerCanPlay = false;
             StartCoroutine(EnemyRollDice());
 
@@ -30,6 +31,7 @@ public class EnemyRoll : MonoBehaviour
 
     IEnumerator EnemyRollDice()
     {
+        dice.CardUsed = true;
         yield return new WaitForSeconds(2);
         
         dice.StartCoroutine(dice.RollNumerator());
@@ -40,6 +42,7 @@ public class EnemyRoll : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         dice.RoundFinished = true;
+        
         
         
 

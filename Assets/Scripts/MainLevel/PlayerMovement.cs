@@ -15,8 +15,10 @@ public class PlayerMovement : MonoBehaviour
     public ParticleSystem PlayerEffect;
     public Animator animator;
     public AudioSource walkingSound;
+    public AudioClip audioClip;
     private Rigidbody2D rb;
     public NavMeshAgent Agent;
+    private float nextTimeToPlay;
    
     private void Start()
     {
@@ -25,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
         Agent = GetComponent<NavMeshAgent>(); 
         Agent.updateRotation = false;
         Agent.updateUpAxis = false;
+        camera.orthographicSize = 10;
+        walkingSound.clip = audioClip;
+        walkingSound.volume = 600;
 
 
     }
@@ -58,11 +63,19 @@ public class PlayerMovement : MonoBehaviour
         camera.transform.position = Vector3.Lerp( new Vector3(camera.transform.position.x, camera.transform.position.y, ConstZ), 
             new Vector3(rb.transform.position.x, rb.transform.position.y, ConstZ), 10 * Time.deltaTime);
             
-        if (Agent.acceleration > 0) //&& rb.position.y != wayPoint.y || rb.position.x != wayPoint.x
+        if (Agent.hasPath ) //&& rb.position.y != wayPoint.y || rb.position.x != wayPoint.x
         {
             waypoint.SetActive(true);
             waypoint.transform.position = wayPoint;
-            walkingSound.Play();
+            if (Time.time > nextTimeToPlay)
+            {
+               
+                walkingSound.Play();
+                nextTimeToPlay = Time.time + audioClip.length;
+            }
+
+           
+           
         }
         else
         { 
